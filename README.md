@@ -1,6 +1,8 @@
 # babel-plugin-array-includes
 
-Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.
+> Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.
+
+Thanks to @sebmck for the help.
 
 ## Example
 
@@ -16,6 +18,44 @@ Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.
 "use strict";
 
 [1, 2, 3, 5, 8, 13].indexOf(4) >= 0;
+```
+
+## Pitfalls
+
+This doesn't work:
+
+**In**
+
+```js
+function foo(arr) {
+  return arr.includes('foo');
+}
+```
+
+**Out**
+
+```js
+function foo(arr) {
+  return arr.includes('foo'); // still includes
+}
+```
+
+You have to specify that `arr` is an array.
+
+**In**
+
+```js
+function foo(arr:Array) {
+  return arr.includes('foo');
+}
+```
+
+**Out**
+
+```js
+function foo(arr) {
+  return arr.indexOf('foo') >= 0; // now it works
+}
 ```
 
 ## Installation
