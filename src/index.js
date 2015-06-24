@@ -6,9 +6,11 @@ export default function ({ Plugin, types: t }) {
 
     visitor: {
       CallExpression: function (node, parent, scope, file) {
-        var prop = node.property;
-        if (this.get("callee").getSource().indexOf("includes") >= 0) {
-          return '(' + this.getSource().replace('includes', 'indexOf') + ' >= 0)';
+        var callee = this.get('callee');
+        if (callee.node.property && callee.node.property.name === 'includes') {
+          callee.node.property.name = 'indexOf';
+
+          return t.logicalExpression(">=", node, t.literal(0));
         }
       }
     }
