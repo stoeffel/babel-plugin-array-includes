@@ -1,6 +1,6 @@
 # babel-plugin-array-includes
 
-> Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.
+> Replaces `arr.includes(val)` with `arr.indexOf(val) >= 0`.
 
 Thanks to [@sebmck](https://github.com/sebmck) for the help.
 
