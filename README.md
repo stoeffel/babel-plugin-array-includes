@@ -2,7 +2,7 @@
 
 > Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.
 
-Thanks to @sebmck for the help.
+Thanks to [@sebmck](https://github.com/sebmck) for the help.
 
 ## Example
 
