@@ -1,0 +1,30 @@
+{
+  "name": "babel-plugin-array-includes",
+  "version": "1.0.0",
+  "description": "Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.",
+  "author": "Christoph Hermann",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stoeffel/babel-plugin-array-includes.git"
+  },
+  "peerDependencies": {
+    "babel-core": ">=5.2.0"
+  },
+  "main": "lib/index.js",
+  "devDependencies": {
+    "babel": "^5.6.0"
+  },
+  "scripts": {
+    "build": "babel-plugin build",
+    "push": "babel-plugin publish",
+    "test": "babel-plugin test"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "array",
+    "includes",
+    "polyfill"
+  ]
+}
