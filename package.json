@@ -20,7 +20,7 @@
     "mocha": "^2.3.4"
   },
   "scripts": {
-    "build": "babel -D src -o lib",
+    "build": "babel -D src -d lib",
     "test": "mocha"
   },
   "keywords": [
