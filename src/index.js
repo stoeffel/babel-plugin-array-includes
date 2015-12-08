@@ -1,22 +1,21 @@
-export default function ({ Plugin, types: t }) {
-  return new Plugin("array-includes", {
-    metadata: {
-      group: "builtin-post"
-    },
-
+export default function ({ types: t }) {
+  return {
     visitor: {
-      CallExpression: function (node, parent, scope, file) {
-        var callee = this.get('callee');
+      CallExpression(path) {
+        
+        const callee = path.node.callee;
 
-        if (callee.isMemberExpression({ computed: false }) &&
-            callee.get("property").isIdentifier({ name: "includes" }) &&
-            callee.get("object").isGenericType("Array")) {
+        if (t.isMemberExpression(callee, { computed: false }) &&
+            t.isIdentifier(callee.property, { name: "includes" })) {
 
-          callee.node.property.name = 'indexOf';
+          callee.property.name = 'indexOf';
 
-          return t.logicalExpression(">=", node, t.literal(0));
+          path.replaceWith(
+            t.binaryExpression("!==", path.node, t.numericLiteral(-1))
+          );
+
         }
       }
     }
-  });
+  };
 }

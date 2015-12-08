@@ -9,16 +9,19 @@
     "url": "https://github.com/stoeffel/babel-plugin-array-includes.git"
   },
   "peerDependencies": {
-    "babel-core": ">=5.2.0"
+    "babel-core": ">=6.3.0"
   },
   "main": "lib/index.js",
   "devDependencies": {
-    "babel": "^5.6.0"
+    "babel-cli": "^6.3.15",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
   },
   "scripts": {
-    "build": "babel-plugin build",
-    "push": "babel-plugin publish",
-    "test": "babel-plugin test"
+    "build": "babel -D src -d lib",
+    "test": "mocha"
   },
   "keywords": [
     "babel",
