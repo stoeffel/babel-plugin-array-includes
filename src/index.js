@@ -6,8 +6,7 @@ export default function ({ types: t }) {
         const callee = path.node.callee;
 
         if (t.isMemberExpression(callee, { computed: false }) &&
-            t.isIdentifier(callee.property, { name: "includes" }) &&
-            path.get('callee.object').isGenericType("Array")) {
+            t.isIdentifier(callee.property, { name: "includes" })) {
 
           callee.property.name = 'indexOf';
 
