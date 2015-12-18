@@ -40,24 +40,6 @@ function foo(arr) {
 }
 ```
 
-You have to specify that `arr` is an array.
-
-**In**
-
-```js
-function foo(arr:Array) {
-  return arr.includes('foo');
-}
-```
-
-**Out**
-
-```js
-function foo(arr) {
-  return arr.indexOf('foo') >= 0; // now it works
-}
-```
-
 ## Installation
 
 ```sh
