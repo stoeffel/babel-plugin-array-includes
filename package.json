@@ -21,7 +21,11 @@
   },
   "scripts": {
     "build": "babel -D src -d lib",
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "npm run build",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "minor-release": "npm version minor && npm publish && git push --follow-tags",
+    "major-release": "npm version major && npm publish && git push --follow-tags"
   },
   "keywords": [
     "babel",
