@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-array-includes",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Replaces `arr.includes(val)' with `arr.indexOf(val) >= 0`.",
   "author": "Christoph Hermann",
   "license": "MIT",
