@@ -8,9 +8,6 @@
     "type": "git",
     "url": "https://github.com/stoeffel/babel-plugin-array-includes.git"
   },
-  "peerDependencies": {
-    "babel-core": ">=6.3.0"
-  },
   "main": "lib/index.js",
   "devDependencies": {
     "babel-cli": "^6.3.15",
